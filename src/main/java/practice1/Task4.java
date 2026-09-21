@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Task4 {
     static void main() {
         // Вариант 3
+        // Заданиу 4
         System.out.println("Вычисление ускорения по a = f / m");
         Scanner scanner = new Scanner(System.in);
 
