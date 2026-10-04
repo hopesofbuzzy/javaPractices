@@ -14,15 +14,7 @@ public class Task5 {
             System.out.println("2. Информация о программе");
             System.out.println("3. Информация о разработчике");
             System.out.println("4. Выход");
-            while (true) {
-                try {
-                    in = scanner.nextInt();
-                    break;
-                } catch (Exception e) {
-                    System.out.println("Введите число от 1 до 4!");
-                    scanner.next();
-                }
-            }
+            in = readInt(scanner);
 
             switch (in) {
                 case 1:
@@ -51,20 +43,10 @@ public class Task5 {
     static void calculate(Scanner scanner) {
         double force, mass;
         System.out.println("Введите силу f");
-        try {
-            force = scanner.nextDouble();
-        } catch (Exception e) {
-            System.out.println("Введите число для силы!");
-            return;
-        }
+        force = readDouble(scanner);
 
         System.out.println("Введите массу m");
-        try {
-            mass = scanner.nextDouble();
-        } catch (Exception e) {
-            System.out.println("Введите число для массы!");
-            return;
-        }
+        mass = readDouble(scanner);
 
         if (mass == 0.0) {
             System.out.println("Ошибка валидации: масса равна нулю.");
@@ -72,5 +54,27 @@ public class Task5 {
         }
 
         System.out.printf("Ускорение: %f%n\n", force / mass);
+    }
+
+    static int readInt(Scanner scanner) {
+        while (true) {
+            try {
+                return scanner.nextInt();
+            } catch (Exception e) {
+                System.out.println("Введите целое число!");
+                scanner.next();
+            }
+        }
+    }
+
+    static double readDouble(Scanner scanner) {
+        while (true) {
+            try {
+                return scanner.nextDouble();
+            } catch (Exception e) {
+                System.out.println("Введите вещественное число!");
+                scanner.next();
+            }
+        }
     }
 }
