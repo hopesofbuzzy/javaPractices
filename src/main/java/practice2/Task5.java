@@ -7,29 +7,29 @@ public class Task5 {
         // Вариант 3
         // Заданиу 4
         Scanner scanner = new Scanner(System.in);
-        int in = -1;
-        while (in != 4) {
-            System.out.println("Вычисление ускорения по a = f / m");
-            System.out.println("1. Выполнить расчёт");
-            System.out.println("2. Информация о программе");
-            System.out.println("3. Информация о разработчике");
-            System.out.println("4. Выход");
-            in = readInt(scanner);
+        boolean running = true;
+        do {
+            printMenu();
+            int in = readInt(scanner);
 
             switch (in) {
-                case 1:
-                    calculate(scanner);
-                    break;
-                case 2:
-                    programInfo();
-                    break;
-                case 3:
-                    developerInfo();
-                    break;
-                case 4: return;
-                default: System.out.println("Введите число от 1 до 4!");
+                case 1 -> calculate(scanner);
+                case 2 -> programInfo();
+                case 3 -> developerInfo();
+                case 4 -> {
+                    running = false;
+                }
+                default -> System.out.println("Введите число от 1 до 4!");
             }
-        }
+        } while (running);
+    }
+
+    static void printMenu() {
+        System.out.println("Вычисление ускорения по a = f / m");
+        System.out.println("1. Выполнить расчёт");
+        System.out.println("2. Информация о программе");
+        System.out.println("3. Информация о разработчике");
+        System.out.println("4. Выход");
     }
 
     static void developerInfo() {
@@ -57,6 +57,7 @@ public class Task5 {
     }
 
     static int readInt(Scanner scanner) {
+        System.out.print("Ваш выбор: ");
         while (true) {
             try {
                 return scanner.nextInt();
@@ -68,6 +69,7 @@ public class Task5 {
     }
 
     static double readDouble(Scanner scanner) {
+        System.out.print("Ваш выбор: ");
         while (true) {
             try {
                 return scanner.nextDouble();
