@@ -3,17 +3,17 @@ import java.util.Scanner;
 
 
 public class Task5 {
-    static void main() {
-        // Вариант 3
-        // Заданиу 4
-        Scanner scanner = new Scanner(System.in);
+
+    static Scanner scanner = new Scanner(System.in);
+
+    public static void main() {
         boolean running = true;
         do {
             printMenu();
-            int in = readInt(scanner);
+            int in = readInt();
 
             switch (in) {
-                case 1 -> calculate(scanner);
+                case 1 -> calculate();
                 case 2 -> programInfo();
                 case 3 -> developerInfo();
                 case 4 -> {
@@ -24,7 +24,7 @@ public class Task5 {
         } while (running);
     }
 
-    static void printMenu() {
+    private static void printMenu() {
         System.out.println("Вычисление ускорения по a = f / m");
         System.out.println("1. Выполнить расчёт");
         System.out.println("2. Информация о программе");
@@ -32,21 +32,21 @@ public class Task5 {
         System.out.println("4. Выход");
     }
 
-    static void developerInfo() {
+    private static void developerInfo() {
         System.out.println("Разработчик: Нурбаев Данияр РИ-250911\n");
     }
 
-    static void programInfo() {
+    private static void programInfo() {
         System.out.println("Программа написана на JDK 26 (Java)\n");
     }
 
-    static void calculate(Scanner scanner) {
+    private static void calculate() {
         double force, mass;
         System.out.println("Введите силу f");
-        force = readDouble(scanner);
+        force = readDouble();
 
         System.out.println("Введите массу m");
-        mass = readDouble(scanner);
+        mass = readDouble();
 
         if (mass == 0.0) {
             System.out.println("Ошибка валидации: масса равна нулю.");
@@ -56,7 +56,7 @@ public class Task5 {
         System.out.printf("Ускорение: %f%n\n", force / mass);
     }
 
-    static int readInt(Scanner scanner) {
+    private static int readInt() {
         System.out.print("Ваш выбор: ");
         while (true) {
             try {
@@ -68,7 +68,7 @@ public class Task5 {
         }
     }
 
-    static double readDouble(Scanner scanner) {
+    private static double readDouble() {
         System.out.print("Ваш выбор: ");
         while (true) {
             try {
