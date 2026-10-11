@@ -1,8 +1,8 @@
 package practice2;
 
-import org.junit.Test;
-
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import static practice2.Task4.dist;
 
 public class Task4Test {

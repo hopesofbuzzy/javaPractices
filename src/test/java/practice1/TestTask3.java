@@ -1,8 +1,8 @@
 package practice1;
 
-import org.junit.Test;
-
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import static practice1.Task3.getLessNumber;
 
 public class TestTask3 {
