@@ -11,6 +11,6 @@ public class OpenFileAction extends Action {
 
     @Override
     public String describe() {
-        return ""
+        return "";
     }
 }
