@@ -8,4 +8,5 @@ public class Task1 {
             System.out.printf("tan(%d) = %f\n", i * 5, Math.tan(degree));
         }
     }
+
 }

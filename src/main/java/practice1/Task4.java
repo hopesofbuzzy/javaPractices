@@ -26,7 +26,7 @@ public class Task4 {
             return;
         }
 
-        if (mass == 0.0) {
+        if (mass <= 0.0) {
             System.out.println("Ошибка валидации: масса равна нулю.");
             return;
         }

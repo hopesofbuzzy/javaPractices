@@ -13,6 +13,7 @@ public class Task4 {
         }
 
         System.out.println(dist(dcoords[0], dcoords[1], dcoords[2], dcoords[3], dcoords[4], dcoords[5]));
+        System.out.printf("%.2f", 5.12345);
     }
 
     static double dist(
